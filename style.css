@@ -1,0 +1,730 @@
+/* =============================================
+   SafeWork Emergency Guide — style.css
+   Warna utama: biru tua, merah darurat, hijau aman
+   ============================================= */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --biru-tua: #1a3a5c;
+  --biru-medium: #1e5799;
+  --biru-muda: #e8f0fe;
+  --merah: #c0392b;
+  --merah-muda: #fdecea;
+  --hijau: #1e7e34;
+  --hijau-muda: #e9f7ef;
+  --abu-muda: #f4f6f8;
+  --abu: #6c757d;
+  --putih: #ffffff;
+  --teks-gelap: #1a1a2e;
+  --border: #dee2e6;
+  --shadow: 0 2px 12px rgba(0,0,0,0.10);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth; /* Scroll halus untuk anchor link */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--abu-muda);
+  color: var(--teks-gelap);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Tombol (Button) --- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--biru-medium);
+  color: var(--putih);
+  border-color: var(--biru-medium);
+}
+.btn-primary:hover {
+  background-color: var(--biru-tua);
+  border-color: var(--biru-tua);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: var(--merah);
+  color: var(--putih);
+  border-color: var(--merah);
+}
+.btn-danger:hover {
+  background-color: #a93226;
+  border-color: #a93226;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--putih);
+  border-color: rgba(255,255,255,0.6);
+}
+.btn-outline:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* --- Container & Section --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--putih);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--biru-tua);
+  margin-bottom: 0.5rem;
+}
+.section-header p {
+  color: var(--abu);
+  font-size: 1.05rem;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--biru-tua);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--putih);
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.nav-link:hover {
+  color: var(--putih);
+  background-color: rgba(255,255,255,0.12);
+}
+
+/* Tombol hamburger untuk HP */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--putih);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero {
+  background: linear-gradient(135deg, var(--biru-tua) 0%, var(--biru-medium) 100%);
+  color: var(--putih);
+  padding: 6rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.15);
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Panel kontak darurat (tersembunyi by default) */
+.panel-darurat {
+  display: none; /* JavaScript akan mengubah ini */
+  background-color: var(--merah);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  max-width: 420px;
+  margin: 2rem auto 0;
+  text-align: left;
+  animation: slideDown 0.3s ease;
+}
+.panel-darurat h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--putih);
+}
+.panel-darurat ul li {
+  padding: 0.4rem 0;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.panel-darurat ul li:last-child {
+  border-bottom: none;
+}
+.panel-darurat .btn-outline {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   PANDUAN DARURAT — CARD GRID
+   ============================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-darurat {
+  background-color: var(--putih);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: var(--shadow);
+}
+.card-darurat:hover {
+  border-color: var(--biru-medium);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(30,87,153,0.15);
+}
+/* Gaya saat card aktif / dipilih */
+.card-darurat.active {
+  border-color: var(--biru-medium);
+  background-color: var(--biru-muda);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(30,87,153,0.2);
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+}
+.card-darurat h3 {
+  font-size: 1rem;
+  color: var(--biru-tua);
+  margin-bottom: 0.4rem;
+}
+.card-darurat p {
+  font-size: 0.82rem;
+  color: var(--abu);
+  line-height: 1.4;
+}
+
+/* =============================================
+   DETAIL PANDUAN
+   ============================================= */
+.detail-panduan {
+  display: none; /* Tersembunyi sampai card diklik */
+  background-color: var(--putih);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-header {
+  background-color: var(--biru-tua);
+  color: var(--putih);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.detail-header h3 {
+  font-size: 1.3rem;
+}
+
+.detail-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0;
+}
+
+.detail-kolom {
+  padding: 1.75rem;
+  border-right: 1px solid var(--border);
+}
+.detail-kolom:last-child {
+  border-right: none;
+}
+
+.detail-kolom h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid;
+}
+
+/* Warna per kolom */
+.kolom-lakukan h4 {
+  color: var(--hijau);
+  border-color: var(--hijau);
+}
+.kolom-larangan h4 {
+  color: var(--merah);
+  border-color: var(--merah);
+}
+.kolom-kontak h4 {
+  color: var(--biru-medium);
+  border-color: var(--biru-medium);
+}
+
+.detail-kolom ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.detail-kolom ul li {
+  font-size: 0.9rem;
+  color: var(--teks-gelap);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.5;
+}
+.detail-kolom ul li::before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8rem;
+}
+
+.kolom-lakukan ul li::before { content: '✅'; }
+.kolom-larangan ul li::before { content: '🚫'; }
+.kolom-kontak ul li::before  { content: '📞'; }
+
+/* =============================================
+   KONTAK DARURAT
+   ============================================= */
+.kontak-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+.kontak-card {
+  background-color: var(--abu-muda);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all var(--transition);
+  box-shadow: var(--shadow);
+}
+.kontak-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.kontak-card.kontak-emergency {
+  background-color: var(--merah-muda);
+  border-color: #f5b7b1;
+}
+
+.kontak-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+.kontak-card h4 {
+  font-size: 0.9rem;
+  color: var(--biru-tua);
+  margin-bottom: 0.5rem;
+}
+.kontak-nomor {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--merah);
+}
+
+.kontak-catatan {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--abu);
+  background-color: var(--biru-muda);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+}
+
+/* =============================================
+   TIPS K3
+   ============================================= */
+.tips-box {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tips-display {
+  background-color: var(--putih);
+  border: 2px solid var(--biru-muda);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips-placeholder {
+  color: var(--abu);
+  font-size: 0.95rem;
+}
+
+.tips-isi {
+  font-size: 1.15rem;
+  color: var(--biru-tua);
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+/* =============================================
+   CHECKLIST
+   ============================================= */
+.checklist-box {
+  max-width: 620px;
+  margin: 0 auto;
+  background-color: var(--putih);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color var(--transition);
+  border-radius: 6px;
+  padding-left: 0.5rem;
+}
+.checklist-item:last-of-type {
+  border-bottom: none;
+}
+.checklist-item:hover {
+  background-color: var(--abu-muda);
+}
+
+/* Sembunyikan checkbox asli */
+.checklist-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Kotak centang custom */
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  font-size: 13px;
+}
+
+/* Saat checkbox dicentang */
+.checklist-item input:checked ~ .checkmark {
+  background-color: var(--hijau);
+  border-color: var(--hijau);
+  color: var(--putih);
+}
+.checklist-item input:checked ~ .checkmark::after {
+  content: '✓';
+  font-weight: 700;
+}
+.checklist-item input:checked ~ .checklist-label {
+  color: var(--abu);
+  text-decoration: line-through;
+}
+
+.checklist-label {
+  font-size: 0.95rem;
+  color: var(--teks-gelap);
+  transition: color var(--transition);
+}
+
+/* Progress bar */
+.checklist-progress {
+  margin-top: 1.5rem;
+}
+
+.progress-bar-wrap {
+  background-color: var(--border);
+  border-radius: 30px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--biru-medium);
+  border-radius: 30px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: var(--abu);
+  text-align: center;
+}
+
+/* Pesan selesai */
+.checklist-selesai {
+  display: none;
+  margin-top: 1rem;
+  background-color: var(--hijau-muda);
+  color: var(--hijau);
+  border: 1px solid #a9dfbf;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  background-color: var(--biru-tua);
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--putih);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.footer-disclaimer {
+  font-size: 0.82rem;
+  max-width: 600px;
+  margin: 0 auto 1.2rem;
+  color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.06);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* =============================================
+   RESPONSIF — TAMPILAN HP
+   ============================================= */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: var(--biru-tua);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  .navbar {
+    position: sticky;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  /* Grid panduan */
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  /* Detail panduan */
+  .detail-body {
+    grid-template-columns: 1fr;
+  }
+  .detail-kolom {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .detail-kolom:last-child {
+    border-bottom: none;
+  }
+
+  /* Section heading */
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Checklist */
+  .checklist-box {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .section {
+    padding: 3.5rem 0;
+  }
+}

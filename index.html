@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeWork Emergency Guide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo teks -->
+      <a href="#" class="nav-logo">🛡️ SafeWork</a>
+
+      <!-- Tombol hamburger untuk tampilan HP -->
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu navigasi -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="#panduan" class="nav-link">Panduan Darurat</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+        <li><a href="#tips" class="nav-link">Tips</a></li>
+        <li><a href="#checklist" class="nav-link">Checklist</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <span class="hero-badge">⚠️ Keselamatan & Kesehatan Kerja</span>
+      <h1 class="hero-title">Siap Menghadapi Keadaan Darurat di Tempat Kerja</h1>
+      <p class="hero-desc">
+        Pilih jenis keadaan darurat dan dapatkan panduan cepat tentang apa yang harus dilakukan,
+        apa yang harus dihindari, dan siapa yang harus dihubungi.
+      </p>
+      <div class="hero-buttons">
+        <!-- Scroll ke bagian panduan -->
+        <a href="#panduan" class="btn btn-primary">📖 Lihat Panduan</a>
+        <!-- Tampilkan/sembunyikan panel kontak darurat -->
+        <button class="btn btn-danger" id="btnModeDarurat">🚨 Mode Darurat</button>
+      </div>
+    </div>
+
+    <!-- Panel kontak darurat cepat (tersembunyi by default) -->
+    <div class="panel-darurat" id="panelDarurat">
+      <h3>🚨 Kontak Darurat Cepat</h3>
+      <ul>
+        <li>🔥 Pemadam Kebakaran: <strong>113</strong></li>
+        <li>🚑 Ambulans: <strong>119</strong></li>
+        <li>🚔 Polisi: <strong>110</strong></li>
+        <li>🏥 Tim K3: <strong>08xx-xxxx-xxxx</strong></li>
+        <li>🔒 Security: <strong>08xx-xxxx-xxxx</strong></li>
+      </ul>
+      <button class="btn btn-outline" id="btnTutupPanel">✕ Tutup</button>
+    </div>
+  </section>
+
+  <!-- ===== SECTION PANDUAN DARURAT ===== -->
+  <section class="section" id="panduan">
+    <div class="container">
+      <div class="section-header">
+        <h2>Panduan Darurat</h2>
+        <p>Klik salah satu kategori di bawah untuk melihat panduan lengkap.</p>
+      </div>
+
+      <!-- 5 Card kategori darurat -->
+      <div class="card-grid" id="cardGrid">
+
+        <div class="card-darurat" data-type="kebakaran">
+          <div class="card-icon">🔥</div>
+          <h3>Kebakaran</h3>
+          <p>Langkah aman saat terjadi kebakaran di tempat kerja</p>
+        </div>
+
+        <div class="card-darurat" data-type="gempa">
+          <div class="card-icon">🌍</div>
+          <h3>Gempa</h3>
+          <p>Cara berlindung dan evakuasi saat gempa bumi</p>
+        </div>
+
+        <div class="card-darurat" data-type="kecelakaan">
+          <div class="card-icon">🩹</div>
+          <h3>Kecelakaan Kerja</h3>
+          <p>Pertolongan pertama dan pelaporan kecelakaan</p>
+        </div>
+
+        <div class="card-darurat" data-type="listrik">
+          <div class="card-icon">⚡</div>
+          <h3>Tersengat Listrik</h3>
+          <p>Penanganan darurat korban sengatan listrik</p>
+        </div>
+
+        <div class="card-darurat" data-type="kimia">
+          <div class="card-icon">🧪</div>
+          <h3>Tumpahan Bahan Kimia</h3>
+          <p>Prosedur aman saat terjadi tumpahan bahan berbahaya</p>
+        </div>
+
+      </div>
+
+      <!-- Area detail panduan — muncul saat card diklik -->
+      <div class="detail-panduan" id="detailPanduan">
+        <!-- Konten diisi oleh JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION KONTAK DARURAT ===== -->
+  <section class="section section-alt" id="kontak">
+    <div class="container">
+      <div class="section-header">
+        <h2>📞 Kontak Darurat</h2>
+        <p>Simpan nomor-nomor penting ini dan pastikan Anda bisa mengaksesnya dengan cepat.</p>
+      </div>
+
+      <div class="kontak-grid">
+
+        <div class="kontak-card">
+          <div class="kontak-icon">🦺</div>
+          <h4>Tim K3 Perusahaan</h4>
+          <span class="kontak-nomor">08xx-xxxx-xxxx</span>
+        </div>
+
+        <div class="kontak-card">
+          <div class="kontak-icon">🔒</div>
+          <h4>Security</h4>
+          <span class="kontak-nomor">08xx-xxxx-xxxx</span>
+        </div>
+
+        <div class="kontak-card">
+          <div class="kontak-icon">🏥</div>
+          <h4>Petugas P3K</h4>
+          <span class="kontak-nomor">08xx-xxxx-xxxx</span>
+        </div>
+
+        <div class="kontak-card kontak-emergency">
+          <div class="kontak-icon">🔥</div>
+          <h4>Pemadam Kebakaran</h4>
+          <span class="kontak-nomor">113</span>
+        </div>
+
+        <div class="kontak-card kontak-emergency">
+          <div class="kontak-icon">🚑</div>
+          <h4>Ambulans</h4>
+          <span class="kontak-nomor">119</span>
+        </div>
+
+        <div class="kontak-card kontak-emergency">
+          <div class="kontak-icon">🚔</div>
+          <h4>Polisi</h4>
+          <span class="kontak-nomor">110</span>
+        </div>
+
+      </div>
+
+      <p class="kontak-catatan">
+        ℹ️ Nomor internal (Tim K3, Security, P3K) dapat disesuaikan dengan perusahaan masing-masing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION TIPS K3 ===== -->
+  <section class="section" id="tips">
+    <div class="container">
+      <div class="section-header">
+        <h2>💡 Tips K3 Hari Ini</h2>
+        <p>Klik tombol di bawah untuk mendapatkan tips keselamatan kerja secara acak.</p>
+      </div>
+
+      <div class="tips-box">
+        <!-- Area tampil tips -->
+        <div class="tips-display" id="tipsDisplay">
+          <span class="tips-placeholder">Klik tombol di bawah untuk menampilkan tips K3.</span>
+        </div>
+        <!-- Tombol acak tips -->
+        <button class="btn btn-primary" id="btnTips">✨ Tampilkan Tips K3</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION CHECKLIST ===== -->
+  <section class="section section-alt" id="checklist">
+    <div class="container">
+      <div class="section-header">
+        <h2>✅ Checklist Area Aman</h2>
+        <p>Centang semua poin untuk memastikan area kerja Anda sudah aman.</p>
+      </div>
+
+      <div class="checklist-box">
+
+        <!-- Setiap item checklist -->
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">Alat kerja sudah dimatikan.</span>
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">Kabel dalam kondisi aman.</span>
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">Jalur evakuasi tidak terhalang.</span>
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">Tidak ada tumpahan di lantai.</span>
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">Bahan kimia tertutup rapat.</span>
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox" class="checklist-cb" />
+          <span class="checkmark"></span>
+          <span class="checklist-label">APD dikembalikan ke tempatnya.</span>
+        </label>
+
+        <!-- Tampilan progress -->
+        <div class="checklist-progress" id="checklistProgress">
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <p class="progress-text" id="progressText">0 dari 6 poin sudah dicek.</p>
+        </div>
+
+        <!-- Pesan selesai (tersembunyi by default) -->
+        <div class="checklist-selesai" id="checklistSelesai">
+          🎉 Area kerja sudah lebih aman. Terima kasih sudah peduli K3!
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">🛡️ SafeWork Emergency Guide</div>
+      <p class="footer-tagline">Panduan edukasi keselamatan dan kesehatan kerja.</p>
+      <p class="footer-disclaimer">
+        ⚠️ Panduan ini bersifat edukatif. Untuk keadaan darurat nyata, ikuti prosedur resmi
+        perusahaan dan hubungi petugas berwenang.
+      </p>
+      <p class="footer-copy">© 2025 SafeWork Emergency Guide</p>
+    </div>
+  </footer>
+
+  <!-- Hubungkan file JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
